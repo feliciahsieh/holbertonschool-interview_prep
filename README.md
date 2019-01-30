@@ -1,7 +1,5 @@
 # holbertonschool-interview_prep
 
-<img src="https://" style="height:15%;width:15%" />
-
 ## Welcome
 Holds practice software programs to prepare for interviews
 
