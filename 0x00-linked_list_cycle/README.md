@@ -1,15 +1,12 @@
-# holbertonschool-interview_prep
-
-<img src="https://" style="height:15%;width:15%" />
+# 0x00-linked_list_cycle
 
 ## Welcome
-Holds practice software programs to prepare for interviews
+Solves Hoare's Tortoise and Rabbit algorithm, checking if a cycle exists in a singly-linked list.
 
 ## Table of Contents
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
-
 
 ## Requirements
 * Ubuntu 14.04 LTS
@@ -18,7 +15,7 @@ Holds practice software programs to prepare for interviews
 ## Installation
 In your terminal, git clone the directory with the following command:
 ```
-git clone https://github.com/feliciahsieh
+git clone [...]
 ```
 
 ## Usage
