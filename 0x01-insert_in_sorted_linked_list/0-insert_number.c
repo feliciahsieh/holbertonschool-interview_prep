@@ -29,7 +29,6 @@ listint_t *insert_node(listint_t **head, int number)
 	{ /* at least 1 element */
 		while ((current != NULL) && ((current->n) < number))
 		{
-			printf("traveling at: %d\n", current->n);
 			prev = current;
 			current = current->next;
 		}
