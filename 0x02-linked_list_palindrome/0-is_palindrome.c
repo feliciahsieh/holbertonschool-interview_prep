@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 	int a[5002];
 	int count = 0, mid = 0, i = 0;
 
-	if ((head == NULL) || ((*head)->next == NULL))
+	if ((head == NULL) || (*head == NULL) || ((*head)->next == NULL))
 		return (1);
 
 	curr = *head;
