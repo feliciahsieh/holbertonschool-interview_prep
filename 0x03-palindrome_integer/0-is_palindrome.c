@@ -11,6 +11,9 @@ int is_palindrome(unsigned long n)
 	int digit[11] = {0};
 	int i = 0, rem = 0, places = 0, mid = 0;
 
+	if (n == 0)
+		return (1);
+
 	while (n > 0)
 	{
 		rem = n % 10;
