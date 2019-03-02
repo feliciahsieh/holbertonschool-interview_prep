@@ -8,8 +8,9 @@
  */
 int is_palindrome(unsigned long n)
 {
-	int digit[11] = {0};
-	int i = 0, rem = 0, places = 0, mid = 0;
+	int digit[1000] = {0};
+	int i = 0, places = 0, mid = 0;
+	unsigned int rem = 0;
 
 	if (n == 0)
 		return (1);
@@ -28,6 +29,5 @@ int is_palindrome(unsigned long n)
 		if (digit[i] != digit[places - i - 1])
 			return (0);
 	}
-
 	return (1);
 }
