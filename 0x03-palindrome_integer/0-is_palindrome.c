@@ -10,7 +10,7 @@ int is_palindrome(unsigned long n)
 {
 	int digit[1000] = {0};
 	int i = 0, places = 0, mid = 0;
-	unsigned int rem = 0;
+	unsigned long rem = 0;
 
 	if (n == 0)
 		return (1);
