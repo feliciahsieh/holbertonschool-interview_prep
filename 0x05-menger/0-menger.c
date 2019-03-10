@@ -6,6 +6,7 @@
  * printMenger - print Menger 2D cube (Menger Face)
  * @m: menger cube represented as an array
  * @w: width of menger cube
+ * @s: size of menger cube
  * Return: N/A
  */
 void printMenger(char *m, int w, int s)
@@ -16,8 +17,8 @@ void printMenger(char *m, int w, int s)
 	for (i = 0; i < s; i++)
 	{
 		printf("%c", m[i]);
-		if (((i+1) % w) == 0)
-		  printf("\n");
+		if (((i + 1) % w) == 0)
+			printf("\n");
 	}
 }
 
@@ -58,12 +59,12 @@ void menger(int level)
 	menger[i] = '\n';
 
 	/* poke holes */
-	sizeHole = pow(3, (level-1));
+	sizeHole = pow(3, (level - 1));
 	printf("sizeHole: %d\n", sizeHole);
 	for (i = 0; i < level; i++)
 	{
-		menger[size/2] = ' ';
-		printf("sizelocation: %d\n", size/2);
+		menger[size / 2] = ' ';
+		printf("sizelocation: %d\n", size / 2);
 	}
 
 	printMenger(menger, width, size);
