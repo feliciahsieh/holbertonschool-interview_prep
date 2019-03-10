@@ -6,20 +6,37 @@
  * printMenger - print Menger 2D cube (Menger Face)
  * @m: menger cube represented as an array
  * @w: width of menger cube
- * @s: size of menger cube
  * Return: N/A
  */
-void printMenger(char *m, int w, int s)
+void printMenger(char *m, int w)
 {
-	int i = 0;
+	int i = 0, j = 0;
 
-	/* printf("w: %d  s: %d\n", w, s); */
-	for (i = 0; i < s; i++)
+	for (i = 0; i < w; i++)
 	{
-		printf("%c", m[i]);
-		if (((i + 1) % w) == 0)
-			printf("\n");
+		for (j = 0; j < w; j++)
+			printf("%c", m[i * w + j]);
+		printf("\n");
 	}
+}
+
+
+/**
+ * isSierpinskiCarpetPixelFilled - checks if pixel should be filled
+ * @x: x coord
+ * @y: y coord
+ * Return: 1 if filled; 0 if not
+ */
+int isSierpinskiCarpetPixelFilled(int x, int y)
+{
+	while (x > 0 || y > 0)
+	{
+		if ((x % 3 == 1) && (y % 3 == 1))
+			return (0);
+		x /= 3;
+		y /= 3;
+	}
+	return (1);
 }
 
 /**
@@ -29,12 +46,12 @@ void printMenger(char *m, int w, int s)
  */
 void menger(int level)
 {
-	char *menger = NULL;
-	int size = 0, width = 0, i = 0;
+	char *menger;
+	int size = 0, width = 0, i = 0, j = 0;
 	int sizeHole = 0;
 
-	menger = menger;
 	sizeHole = sizeHole;
+	size = size;
 
 	if (level < 0)
 		return;
@@ -47,22 +64,20 @@ void menger(int level)
 	width = pow(3, level);
 	size = width * width;
 
-	menger = malloc(size * sizeof(char) + 1);
-	if (menger == NULL)
-		return;
-
 	for (i = 0; i < size; i++)
-		menger[i] = '#';
-	menger[i] = '\n';
-
-	/* poke holes */
-	sizeHole = pow(3, (level - 1));
-	/* printf("sizeHole: %d\n", sizeHole); */
-	for (i = 0; i < level; i++)
 	{
-		menger[size / 2] = ' ';
-		/* printf("sizelocation: %d\n", size / 2); */
+		menger = (char *)malloc(size * sizeof(char) + 1);
+	}
+	menger[size * sizeof(char) + 1] = '\n';
+
+	for (i = 0; i < width; i++)
+	{
+		for (j = 0; j < width; j++)
+			if (isSierpinskiCarpetPixelFilled(i, j))
+				menger[i * width + j] = '#';
+			else
+				menger[i * width + j] = ' ';
 	}
 
-	printMenger(menger, width, size);
+	printMenger(menger, width);
 }
