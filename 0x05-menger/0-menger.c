@@ -41,12 +41,9 @@ void menger(int level)
 	width = pow(3, level);
 	size = width * width;
 
-	for (i = 0; i < size; i++)
-	{
-		menger = (char *)malloc(size * sizeof(char) + 1);
-		if (menger == NULL)
-			return;
-	}
+	menger = malloc((size * sizeof(char)) + 1);
+	if (menger == NULL)
+		return;
 	menger[size * sizeof(char) + 1] = '\n';
 
 	for (i = 0; i < width; i++)
