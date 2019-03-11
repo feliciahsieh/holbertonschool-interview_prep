@@ -3,25 +3,6 @@
 #include <math.h>
 
 /**
- * printMenger - print Menger 2D cube (Menger Face)
- * @m: menger cube represented as an array
- * @w: width of menger cube
- * Return: N/A
- */
-void printMenger(char *m, int w)
-{
-	int i = 0, j = 0;
-
-	for (i = 0; i < w; i++)
-	{
-		for (j = 0; j < w; j++)
-			printf("%c", m[i * w + j]);
-		printf("\n");
-	}
-}
-
-
-/**
  * isSierpinskiCarpetPixelFilled - checks if pixel should be filled
  * @x: x coord
  * @y: y coord
@@ -48,10 +29,6 @@ void menger(int level)
 {
 	char *menger;
 	int size = 0, width = 0, i = 0, j = 0;
-	int sizeHole = 0;
-
-	sizeHole = sizeHole;
-	size = size;
 
 	if (level < 0)
 		return;
@@ -81,7 +58,12 @@ void menger(int level)
 				menger[i * width + j] = ' ';
 	}
 
-	printMenger(menger, width);
+	for (i = 0; i < width; i++)
+	{
+		for (j = 0; j < width; j++)
+			printf("%c", menger[i * width + j]);
+		printf("\n");
+	}
 
 	free(menger);
 }
