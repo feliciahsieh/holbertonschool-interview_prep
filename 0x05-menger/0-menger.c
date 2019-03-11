@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
 
 /**
@@ -27,8 +26,7 @@ int isSierpinskiCarpetPixelFilled(int x, int y)
  */
 void menger(int level)
 {
-	char *menger;
-	int size = 0, width = 0, i = 0, j = 0;
+	int width = 0, i = 0, j = 0;
 
 	if (level < 0)
 		return;
@@ -39,22 +37,14 @@ void menger(int level)
 	}
 
 	width = pow(3, level);
-	size = width * width;
-
-	menger = malloc((size * sizeof(char)) + 1);
-	if (menger == NULL)
-		return;
-	menger[size * sizeof(char)] = '\n';
 
 	for (i = 0; i < width; i++)
 	{
 		for (j = 0; j < width; j++)
 			if (isSierpinskiCarpetPixelFilled(i, j))
-				printf("%c", menger[i * width + j] = '#');
+				printf("%c", '#');
 			else
-				printf("%c", menger[i * width + j] = ' ');
+				printf("%c", ' ');
 		printf("\n");
 	}
-
-	free(menger);
 }
