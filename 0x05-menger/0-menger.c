@@ -50,15 +50,9 @@ void menger(int level)
 	{
 		for (j = 0; j < width; j++)
 			if (isSierpinskiCarpetPixelFilled(i, j))
-				menger[i * width + j] = '#';
+				printf("%c", menger[i * width + j] = '#');
 			else
-				menger[i * width + j] = ' ';
-	}
-
-	for (i = 0; i < width; i++)
-	{
-		for (j = 0; j < width; j++)
-			printf("%c", menger[i * width + j]);
+				printf("%c", menger[i * width + j] = ' ');
 		printf("\n");
 	}
 
