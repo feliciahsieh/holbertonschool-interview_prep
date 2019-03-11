@@ -67,6 +67,8 @@ void menger(int level)
 	for (i = 0; i < size; i++)
 	{
 		menger = (char *)malloc(size * sizeof(char) + 1);
+		if (menger == NULL)
+			return;
 	}
 	menger[size * sizeof(char) + 1] = '\n';
 
@@ -80,4 +82,6 @@ void menger(int level)
 	}
 
 	printMenger(menger, width);
+
+	free(menger);
 }
