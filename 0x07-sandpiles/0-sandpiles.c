@@ -51,8 +51,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	int i = 0, j = 0;
 	int grid3[3][3] = {0};
 
-	grid3[0][0] = grid3[0][0];
-
 	if ((grid1 == NULL) || (grid2 == NULL))
 		return;
 
