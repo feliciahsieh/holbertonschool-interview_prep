@@ -5,6 +5,12 @@
 
 #define N 3
 
+/**
+ * print_grid_sum - something
+ * @grid1: first grid to add
+ * @grid2: second grid to add
+ * Return: N/A
+ */
 static void print_grid_sum(int grid1[3][3], int grid2[3][3])
 {
 	int i, j;
@@ -30,6 +36,11 @@ static void print_grid_sum(int grid1[3][3], int grid2[3][3])
 	}
 }
 
+/**
+ * print_grid - something
+ * @grid: first grid to add
+ * Return: N/A
+ */
 static void print_grid(int grid[3][3])
 {
 	int i, j;
