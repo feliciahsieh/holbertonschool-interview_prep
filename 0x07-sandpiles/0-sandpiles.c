@@ -51,10 +51,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	int i = 0, j = 0;
 	int grid3[3][3];
 
-	for (i = 0; i < 3; i++)
-		for (j = 0; j < 3; j++)
-			grid3[i][j] = 0;
-
 	if ((grid1 == NULL) || (grid2 == NULL))
 		return;
 
@@ -89,77 +85,47 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 
 				if ((i == 0) && (j == 0))
 				{
-					if (grid1[1][0] > 3)
-						grid3[i][j]++;
-					if (grid1[0][1] > 3)
+					if ((grid1[1][0] > 3) || (grid1[0][1] > 3))
 						grid3[i][j]++;
 				}
 				else if ((i == 0) && (j == 1))
 				{
-					if (grid1[0][0] > 3)
-						grid3[i][j]++;
-					if (grid1[1][1] > 3)
-						grid3[i][j]++;
-					if (grid1[0][2] > 3)
+					if ((grid1[0][0] > 3) || (grid1[1][1] > 3) || (grid1[0][2] > 3))
 						grid3[i][j]++;
 				}
 				else if ((i == 0) && (j == 2))
 				{
-					if (grid1[0][1] > 3)
-						grid3[i][j]++;
-					if (grid1[1][2] > 3)
+					if ((grid1[0][1] > 3) || (grid1[1][2] > 3))
 						grid3[i][j]++;
 				}
 				else if ((i == 1) && (j == 0))
 				{
-					if (grid1[0][0] > 3)
-						grid3[i][j]++;
-					if (grid1[2][0] > 3)
-						grid3[i][j]++;
-					if (grid1[1][1] > 3)
+					if ((grid1[0][0] > 3) || (grid1[2][0] > 3) || (grid1[1][1] > 3))
 						grid3[i][j]++;
 				}
 				else if ((i == 1) && (j == 1))
 				{
-					if (grid1[1][0] > 3)
-						grid3[i][j]++;
-					if (grid1[0][1] > 3)
-						grid3[i][j]++;
-					if (grid1[2][1] > 3)
-						grid3[i][j]++;
-					if (grid1[1][2] > 3)
+					if ((grid1[1][0] > 3) || (grid1[0][1] > 3) || (grid1[1][2] > 3))
 						grid3[i][j]++;
 				}
 				else if ((i == 1) && (j == 2))
 				{
-					if (grid1[1][1] > 3)
-						grid3[i][j]++;
-					if (grid1[0][2] > 3)
-						grid3[i][j]++;
-					if (grid1[2][2] > 3)
+					if ((grid1[1][1] > 3) || (grid1[0][2] > 3) || (grid1[2][2] > 3))
 						grid3[i][j]++;
 				}
 				else if ((i == 2) && (j == 0))
 				{
-					if (grid1[1][0] > 3)
-						grid3[i][j]++;
-					if (grid1[2][1] > 3)
+					if ((grid1[1][0] > 3) || (grid1[2][1] > 3))
 						grid3[i][j]++;
 				}
 				else if ((i == 2) && (j == 1))
 				{
-					if (grid1[2][0] > 3)
-						grid3[i][j]++;
-					if (grid1[1][1] > 3)
-						grid3[i][j]++;
-					if (grid1[2][2] > 3)
+					if ((grid1[2][0] > 3) || (grid1[1][1] > 3) || (grid1[2][2] > 3))
 						grid3[i][j]++;
 				}
 				else if ((i == 2) && (j == 2))
 				{
-					if (grid1[2][1] > 3)
-						grid3[i][j]++;
-					if (grid1[1][2] > 3)
+					if ((grid1[2][1] > 3) || (grid1[1][2] > 3))
 						grid3[i][j]++;
 				}
 			}
