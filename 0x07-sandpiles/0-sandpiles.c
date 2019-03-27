@@ -12,6 +12,7 @@ static void printGrid(int grid[GSIZE][GSIZE])
 {
 	int i, j;
 
+	printf("=\n");
 	for (i = 0; i < GSIZE; i++)
 	{
 		for (j = 0; j < GSIZE; j++)
@@ -57,7 +58,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 			g[i][j] = grid1[i][j] + grid2[i][j];
 	while (!isStableGrid(g))
 	{
-		printf("=\n");
 		printGrid(g);
 		for (i = 0; i < GSIZE; i++)
 			for (j = 0; j < GSIZE; j++)
