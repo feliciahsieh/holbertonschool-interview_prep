@@ -1,20 +1,20 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 #include "sandpiles.h"
 
+#define GSIZE 3
 /**
  * printGrid - print gridsum
  * @grid: first grid to add
  * Return: N/A
  */
-static void printGrid(int grid[3][3])
+static void printGrid(int grid[GSIZE][GSIZE])
 {
 	int i, j;
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < GSIZE; i++)
 	{
-		for (j = 0; j < 3; j++)
+		for (j = 0; j < GSIZE; j++)
 		{
 			if (j)
 				printf(" ");
@@ -29,12 +29,12 @@ static void printGrid(int grid[3][3])
  * @grid: grid to check
  * Return: 1 if TRUE, 0 if FALSE
  */
-int isStableGrid(int grid[3][3])
+int isStableGrid(int grid[GSIZE][GSIZE])
 {
 	int i = 0, j = 0;
 
-	for (i = 0; i < 3; i++)
-		for (j = 0; j < 3; j++)
+	for (i = 0; i < GSIZE; i++)
+		for (j = 0; j < GSIZE; j++)
 			if ((grid[i][j] < 0) || (grid[i][j] > 3))
 				return (0);
 	return (1);
@@ -48,91 +48,45 @@ int isStableGrid(int grid[3][3])
  */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
-	int i = 0, j = 0;
-	int grid3[3][3];
+	int i = 0, j = 0, g[3][3];
 
 	if ((grid1 == NULL) || (grid2 == NULL))
 		return;
-
-	for (i = 0; i < 3; i++)
-		for (j = 0; j < 3; j++)
-			grid3[i][j] = grid1[i][j] + grid2[i][j];
-
-	while (!isStableGrid(grid3))
+	for (i = 0; i < GSIZE; i++)
+		for (j = 0; j < GSIZE; j++)
+			g[i][j] = grid1[i][j] + grid2[i][j];
+	while (!isStableGrid(g))
 	{
 		printf("=\n");
-		printGrid(grid3);
-
-		/* Copy grid3 to grid1 and clear grid3 */
-		for (i = 0; i < 3; i++)
-		{
-			for (j = 0; j < 3; j++)
-			{
-				grid1[i][j] = grid3[i][j];
-				grid3[i][j] = 0;
-			}
-		}
-
-		for (i = 0; i < 3; i++)
-		{
-			for (j = 0; j < 3; j++)
-			{
-				/* Topple */
-				if (grid1[i][j] > 3)
-					grid3[i][j] = grid1[i][j] - 4;
-				else
-					grid3[i][j] = grid1[i][j];
-
-				if ((i == 0) && (j == 0))
-				{
-					if ((grid1[1][0] > 3) || (grid1[0][1] > 3))
-						grid3[i][j]++;
-				}
-				else if ((i == 0) && (j == 1))
-				{
-					if ((grid1[0][0] > 3) || (grid1[1][1] > 3) || (grid1[0][2] > 3))
-						grid3[i][j]++;
-				}
-				else if ((i == 0) && (j == 2))
-				{
-					if ((grid1[0][1] > 3) || (grid1[1][2] > 3))
-						grid3[i][j]++;
-				}
-				else if ((i == 1) && (j == 0))
-				{
-					if ((grid1[0][0] > 3) || (grid1[2][0] > 3) || (grid1[1][1] > 3))
-						grid3[i][j]++;
-				}
-				else if ((i == 1) && (j == 1))
-				{
-					if ((grid1[1][0] > 3) || (grid1[0][1] > 3) || (grid1[1][2] > 3))
-						grid3[i][j]++;
-				}
-				else if ((i == 1) && (j == 2))
-				{
-					if ((grid1[1][1] > 3) || (grid1[0][2] > 3) || (grid1[2][2] > 3))
-						grid3[i][j]++;
-				}
-				else if ((i == 2) && (j == 0))
-				{
-					if ((grid1[1][0] > 3) || (grid1[2][1] > 3))
-						grid3[i][j]++;
-				}
-				else if ((i == 2) && (j == 1))
-				{
-					if ((grid1[2][0] > 3) || (grid1[1][1] > 3) || (grid1[2][2] > 3))
-						grid3[i][j]++;
-				}
-				else if ((i == 2) && (j == 2))
-				{
-					if ((grid1[2][1] > 3) || (grid1[1][2] > 3))
-						grid3[i][j]++;
-				}
-			}
-		}
+		printGrid(g);
+		for (i = 0; i < GSIZE; i++)
+			for (j = 0; j < GSIZE; j++)
+				grid1[i][j] = g[i][j];
+		g[0][0] = ((grid1[0][0] > 3) ? grid1[0][0] - 4 : grid1[0][0]) +
+			((grid1[1][0] > 3) ? 1 : 0) + ((grid1[0][1] > 3) ? 1 : 0);
+		g[0][1] = ((grid1[0][1] > 3) ? grid1[0][1] - 4 : grid1[0][1]) +
+			((grid1[0][0] > 3) ? 1 : 0) + ((grid1[1][1] > 3) ? 1 : 0) +
+			((grid1[0][2] > 3) ? 1 : 0);
+		g[0][2] = ((grid1[0][2] > 3) ? grid1[0][2] - 4 : grid1[0][2]) +
+			((grid1[0][1] > 3) ? 1 : 0) + ((grid1[1][2] > 3) ? 1 : 0);
+		g[1][0] = ((grid1[1][0] > 3) ? grid1[1][0] - 4 : grid1[1][0]) +
+			((grid1[0][0] > 3) ? 1 : 0) + ((grid1[2][0] > 3) ? 1 : 0) +
+			((grid1[1][1] > 3) ? 1 : 0);
+		g[1][1] = ((grid1[1][1] > 3) ? grid1[1][1] - 4 : grid1[1][1]) +
+			((grid1[1][0] > 3) ? 1 : 0) + ((grid1[0][1] > 3) ? 1 : 0) +
+			((grid1[1][2] > 3) ? 1 : 0) + ((grid1[2][1] > 3) ? 1 : 0);
+		g[1][2] = ((grid1[1][2] > 3) ? grid1[1][2] - 4 : grid1[1][2]) +
+			((grid1[1][1] > 3) ? 1 : 0) + ((grid1[0][2] > 3) ? 1 : 0) +
+			((grid1[2][2] > 3) ? 1 : 0);
+		g[2][0] = ((grid1[2][0] > 3) ? grid1[2][0] - 4 : grid1[2][0]) +
+			((grid1[1][0] > 3) ? 1 : 0) + ((grid1[2][1] > 3) ? 1 : 0);
+		g[2][1] = ((grid1[2][1] > 3) ? grid1[2][1] - 4 : grid1[2][1]) +
+			((grid1[2][0] > 3) ? 1 : 0) + ((grid1[1][1] > 3) ? 1 : 0) +
+			((grid1[2][2] > 3) ? 1 : 0);
+		g[2][2] = ((grid1[2][2] > 3) ? grid1[2][2] - 4 : grid1[2][2]) +
+			((grid1[2][1] > 3) ? 1 : 0) + ((grid1[1][2] > 3) ? 1 : 0);
 	}
-
-	for (i = 0; i < 3; i++)
-		for (j = 0; j < 3; j++)
-			grid1[i][j] = grid3[i][j];
+	for (i = 0; i < GSIZE; i++)
+		for (j = 0; j < GSIZE; j++)
+			grid1[i][j] = g[i][j];
 }
