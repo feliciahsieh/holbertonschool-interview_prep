@@ -16,7 +16,12 @@ Holds practice software programs to prepare for interviews
 ## Installation
 In your terminal, git clone the directory with the following command:
 ```
-git clone https://github.com/feliciahsieh
+git clone https://github.com/feliciahsieh/holbertonschool-interview_prep.git
+cd [selected directory]
 ```
 
 ## Usage
+```
+gcc [options] [filenames] -o [output file name]
+./[executable]
+```
