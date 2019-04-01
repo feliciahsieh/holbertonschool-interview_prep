@@ -36,6 +36,8 @@ void siftDown(int *heap, size_t root, size_t end, size_t size)
 	right = 2 * root + 2;
 	largest = root;
 
+	if ((left > (size - 1)) || (right > (size - 1)))
+		return;
 	if (left < end && heap[left] > heap[largest])
 		largest = left;
 	if (right < end && heap[right] > heap[largest])

@@ -1,7 +1,17 @@
 # 0x09. Heap Sort
 
 ## Welcome
-An implementation of Heap Sort
+An implementation of Heap Sort with MaxHeap. Heap sort uses a complete, balanced node.
+Algorithm
+
+-Build Max Heap with Largest Value as Parent Node.
+ Use middle element as initial root because half nodes above and below it.
+ (Tree Root is leftmost element).
+
+-Repeat
+   Swap Tree Root with last Leaf. Now largest number is at leaf and will be omitted in further calculations. Tree is on the leftside of array. Sorted nodes are on the rightside of array.
+   Rebuild MaxHeap, making sure parent is largest of children nodes.
+
 
 ## Table of Contents
 * [Requirements](#requirements)
