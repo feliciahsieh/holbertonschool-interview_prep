@@ -1,39 +1,11 @@
 # holbertonschool-interview_prep
 
+<p align="center"><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/212/cisfun.jpg" width="500"></p>
+
 ## Welcome
 Holds practice software programs to prepare for interviews
 
-## Table of Contents
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Usage](#usage)
-
-
-## Requirements
-* Ubuntu 14.04 LTS
-* For C programs, use gcc 4.8.4 (-Wall, -Werror, -Wextra, and -pedantic flags)
-
-## Installation
-In your terminal, git clone the directory with the following command:
-```
-git clone https://github.com/feliciahsieh/holbertonschool-interview_prep.git
-cd [selected directory]
-```
-
-## Usage
-```
-gcc [options] [filenames] -o [output file name]
-./[executable]
-```
-
-
-
-
-<img src="https://www.holbertonschool.com/assets/holberton-logo-1cc451260ca3cd297def53f2250a9794810667c7ca7b5fa5879a569a457bf16f.png" width="300">
-
 # Practice for Low level programming & Algorithms - using C
-
-<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/212/cisfun.jpg" width="500">
 
 ## Welcome
 Thanks for visiting my programming projects. It is written in C.
@@ -95,6 +67,8 @@ Run a C program at your shell prompt normally as directed.
 8. [0x07-sandpiles](./0x07-sandpiles)
 9. [0x08-linear_skip](./0x08-linear_skip)
 10. [0x09-heap_sort](./0x09-heap_sort)
+11.
+12.
 
 ## Credits
 Work is owned and maintained by Felicia Hsieh ([@feliciahsiehsw](https://twitter.com/feliciahsiehsw)). A few projects were group projects, and joint ownership will be reflected in each respective project README.md file.
