@@ -24,7 +24,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	skipSize = sqrt(listSize);
 	curr = list->express;
 	count += skipSize;
-	while ((curr != NULL) && ((curr->n) <= value) && (curr->express != NULL))
+	while ((curr != NULL) && ((curr->n) < value) && (curr->express != NULL))
 	{
 		printf("Value checked at index [%d] = [%d]\n", count, curr->n);
 		count += skipSize;
