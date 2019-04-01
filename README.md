@@ -3,12 +3,7 @@
 <p align="center"><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/212/cisfun.jpg" width="500"></p>
 
 ## Welcome
-Holds practice software programs to prepare for interviews
-
-# Practice for Low level programming & Algorithms - using C
-
-## Welcome
-Thanks for visiting my programming projects. It is written in C.
+Thanks for visiting my practice for Low level programming & Algorithms - using C.
 
 ## Table of Contents
 * [About](#about)
@@ -67,8 +62,6 @@ Run a C program at your shell prompt normally as directed.
 8. [0x07-sandpiles](./0x07-sandpiles)
 9. [0x08-linear_skip](./0x08-linear_skip)
 10. [0x09-heap_sort](./0x09-heap_sort)
-11.
-12.
 
 ## Credits
 Work is owned and maintained by Felicia Hsieh ([@feliciahsiehsw](https://twitter.com/feliciahsiehsw)). A few projects were group projects, and joint ownership will be reflected in each respective project README.md file.
