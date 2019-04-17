@@ -1,4 +1,4 @@
-## 0x05. Menger sponge
+# 0x05. Menger sponge
 
 ## Welcome
 <p align="center"><img src="Menger.png" height="400px" /></p>
