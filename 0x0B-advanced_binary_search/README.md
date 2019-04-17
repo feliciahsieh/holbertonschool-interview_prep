@@ -1,9 +1,11 @@
 # 0x0B. Advanced Binary Search
 
+<p align="center"><img src="bePceUMnSG-binary_search_gif.gif" height="400px" /></p>
+
 ## Welcome
 Variation on binary search tree so that the first occurrence of a value is found. The program returns the index of the value in a sorted array of integers.
 
-# Algorithm
+## Algorithm
 
 * Using left, right, and calculated mid index, search in smaller subarrays using Divide and Conquer recursion.
 * Once the value is found, search in a left subarray for the first occurrence of the value.
