@@ -1,11 +1,11 @@
-# 0x05. Menger sponge
+## 0x05. Menger sponge
 
 ## Welcome
 <p align="center"><img src="Menger.png" height="400px" /></p>
 
 A [Menger sponge](https://en.wikipedia.org/wiki/Menger_sponge) is a fractal curve. It is a three-dimensional generalization of the one-dimensional Cantor set and two-dimensional Sierpinski carpet.
 
-# Algorithm
+## Algorithm
 The code creates a simple, ascii-based 2D Sierpinski carpet to the screen.
 
 ## Table of Contents
