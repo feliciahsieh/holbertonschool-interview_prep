@@ -7,7 +7,7 @@ Find N non-attacking Queens chess piece that can be placed on an N×N chessboard
 
 ## Algorithm
 
-* 
+* NOT FINISHED CODING YET
 
 ## Table of Contents
 * [Requirements](#requirements)
