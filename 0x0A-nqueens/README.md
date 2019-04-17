@@ -1,6 +1,6 @@
 # 0x0A. N Queens
 
-<p align="center"><img src="" height="400px" /></p>
+<p align="center"><img src="nqueens.png" height="400px" /></p>
 
 ## Welcome
 Find N non-attacking Queens chess piece that can be placed on an N×N chessboard. The solution should use backtracking.
