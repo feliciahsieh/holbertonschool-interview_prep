@@ -3,7 +3,7 @@
 <p align="center"><img src="nqueens.png" height="400px" /></p>
 
 ## Welcome
-Find N non-attacking Queens chess piece that can be placed on an N×N chessboard. The solution should use backtracking.
+This program deals with the [N-Queens puzzle](https://en.wikipedia.org/wiki/Eight_queens_puzzle), where the program will find N non-attacking Queens chess pieces that can be placed on an N × N chessboard. The solution should use backtracking (recursion). The minimum size of the board is 4 x 4.
 
 ## Algorithm
 
