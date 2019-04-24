@@ -4,8 +4,15 @@
 
 ## Welcome
 
+An efficient data structure for sorted data is a (Binary Heap)[https://en.wikipedia.org/wiki/Binary_heap] tree. This program only creates a binary max heap and inserts elements. (No deletion or search was implemented)
+
+Big O Notation
+Inserting into a binary heap tree is Best Case	O(1) or Worst Case O(log n)
+Insertion is performed in-place.
 
 ## Algorithm
+Creates a new binary heap tree if root is NULL. A pointer to the new node is returned or NULL upon failure.
+The code inserts a new node at the leaf and sorts upward, aka up-heap operation or bubble-up.
 
 
 ## Table of Contents
