@@ -30,7 +30,7 @@ unsigned int countNodes(binary_tree_t *node)
  */
 heap_t *insertLeaf(heap_t *r, int value)
 {
-	heap_t *q[100] = {NULL}, *leaf = NULL;
+	heap_t *q[1025] = {NULL}, *leaf = NULL;
 	int i = 0, tailIndex = 0;
 
 	q[0] = r;
