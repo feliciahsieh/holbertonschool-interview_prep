@@ -67,7 +67,7 @@ heap_t *insertLeaf(heap_t *r, int value)
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
-	binary_tree_t *leaf = NULL;
+	binary_tree_t *leaf = NULL, *tempNode = NULL;
 	int temp = 0;
 
 	if ((root == NULL) || (*root == NULL))
@@ -79,8 +79,9 @@ heap_t *heap_insert(heap_t **root, int value)
 
 	/* find leaf and insert */
 	leaf = insertLeaf(*root, value);
+	tempNode = leaf;
 
-	/* compare to parent, swap if necessary as travel to root */
+	/* compare to parent, swap if necessary while traveling to root */
 	while ((leaf != NULL) && (leaf->parent != NULL))
 	{
 		if (leaf->parent->n < leaf->n)
@@ -88,8 +89,9 @@ heap_t *heap_insert(heap_t **root, int value)
 			temp = leaf->parent->n;
 			leaf->parent->n = leaf->n;
 			leaf->n = temp;
+			tempNode = tempNode->parent;
 		}
 		leaf = leaf->parent;
 	}
-	return (leaf);
+	return (tempNode);
 }
