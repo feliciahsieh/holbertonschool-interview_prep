@@ -12,7 +12,9 @@ Insertion is performed in-place.
 
 ## Algorithm
 -Creates a new binary heap tree if root is NULL. A pointer to the new node is returned or NULL upon failure.
+
 -Inserts a new node at the leaf of the tree. To find the leaf of the tree, a queue was necessary. A simple, rolling queue was implemented (The queue doesn't start at index 0 other than the first time).
+
 -After inserting the new node, the node is sorted upward with its parent, aka up-heap operation or bubble-up. Instead of swapping the node if a swap is needed, only the payload is swapped (element n) and not the links.
 
 ## Table of Contents
