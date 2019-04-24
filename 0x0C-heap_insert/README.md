@@ -4,7 +4,7 @@
 
 ## Welcome
 
-An efficient data structure for sorted data is a [Binary Heap(https://en.wikipedia.org/wiki/Binary_heap) tree. This program creates a binary max heap tree (using a doubly-linked list) and inserts elements. (No deletion or search was implemented)
+An efficient data structure for sorted data is a [Binary Heap](https://en.wikipedia.org/wiki/Binary_heap) tree. This program creates a binary max heap tree (using a doubly-linked list) and inserts elements. (No deletion or search was implemented)
 
 Big O Notation
 Inserting into a binary heap tree is Best Case	O(1) or Worst Case O(log n)
