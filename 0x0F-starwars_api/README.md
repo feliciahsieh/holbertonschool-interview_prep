@@ -3,7 +3,7 @@
 ## Welcome
 Prints out all of the characters of a Star Wars movie using Requests,
 API, and Javascript. The data source is the Star Wars API, https://swapi.co/.
-User provides the movie ID (1-x).
+User provides the movie ID (1-7).
 
 ## Table of Contents
 * [Requirements](#requirements)
@@ -12,7 +12,9 @@ User provides the movie ID (1-x).
 
 ## Requirements
 * Ubuntu 14.04 LTS
-* Javascript 11.11.0
+* NodeJS 6.17.1
+* Semistandard 12.0.0 (javascript linter)
+* request nodeJS module
 
 ## Installation
 In your terminal, git clone the directory with the following command:
