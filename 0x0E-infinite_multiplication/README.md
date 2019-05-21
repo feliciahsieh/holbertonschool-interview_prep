@@ -1,6 +1,6 @@
 # 0x0E. Infinite Multiplication
 
-<p align="center"><img src="bePceUMnSG-binary_search_gif.gif" height="400px" /></p>
+<p align="center"><img src="InfiniteMult.png" height="400px" /></p>
 
 ## Welcome
 
